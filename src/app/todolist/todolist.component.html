@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+  <div class="col-md-4">
+    <mat-list>
+      <mat-list-item *ngFor="let item of items">
+
+        <h4 mat-line class="text-left" [class.done]="item?.isDone">{{ item?.text }}</h4>
+
+        <div class="col-md-2">
+          <button class="btn btn-basic btn-block btn-sm"
+                  mat-flat-button
+                  (click)="changeDoneStatus(item)"
+          >
+            <mat-icon mat-list-icon *ngIf="item?.isDone">check_box</mat-icon>
+            <mat-icon mat-list-icon *ngIf="!item?.isDone">check_box_outline_blank</mat-icon>
+          </button>
+        </div>
+
+          <div class="col-md-2">
+            <button class="btn btn-basic btn-block btn-sm"
+                    mat-flat-button
+                    (click)="editOrCreate(item)"
+            >
+              <mat-icon mat-list-icon>edit</mat-icon>
+            </button>
+          </div>
+
+          <div class="col-md-2">
+            <button class="btn btn-basic btn-block btn-sm"
+                    mat-flat-button
+                    (click)="removeItem(item?.id)"
+            >
+              <mat-icon mat-list-icon>delete</mat-icon>
+            </button>
+          </div>
+
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+
+    <br/>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6 add-item">
+        <button class="btn btn-basic btn-block btn-lg"
+                mat-raised-button
+                (click)="editOrCreate()"
+        >
+          Add new item
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

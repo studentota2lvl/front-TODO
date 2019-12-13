@@ -1,0 +1,7 @@
+h4.done {
+  text-decoration: line-through;
+}
+.add-item button{
+  background-color: #212529;
+  color: #ffffff;
+}

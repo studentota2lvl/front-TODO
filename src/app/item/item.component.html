@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-12">
+    <form novalidate (ngSubmit)="submit()" [formGroup]="form">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <mat-form-field>
+            <input matInput
+                   placeholder="Item text"
+                   [formControl]="form.controls[formsContract.Item.TEXT]"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+            <mat-checkbox [formControl]="form.controls[formsContract.Item.IS_DONE]">Is done?</mat-checkbox>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-2">
+          <button class="btn btn-basic btn-block btn-sm"
+                  mat-flat-button
+                  type="submit"
+          >
+            Save
+            <mat-icon mat-list-icon>done_outline</mat-icon>
+          </button>
+        </div>
+
+        <div class="col-md-2">
+          <button class="btn btn-basic btn-block btn-sm"
+                  mat-flat-button
+                  routerLink="/"
+          >
+            Cancel
+            <mat-icon mat-list-icon>cancel</mat-icon>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
