@@ -5,27 +5,27 @@ import { Item } from '../types/item.interface';
 import { TodoResponseSuccess } from '../types/todo-response-success.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
-	constructor (
+  constructor (
     private readonly http: HttpClient,
   ) {}
 
-	public getItemByID(id: string): Observable<Item> {
-	  return this.http.get<Item>(`todo/${id}`);
+  public getItemByID(id: string): Observable<Item> {
+    return this.http.get<Item>(`todo/${id}`);
   }
 
   public getAllItems(): Observable<Item[]> {
-	  return this.http.get<Item[]>('todo/list');
+    return this.http.get<Item[]>('todo/list');
   }
 
   public removeItem (id: string): Observable<void> {
-	  return this.http.delete<void>(`todo/${id}`);
+    return this.http.delete<void>(`todo/${id}`);
   }
 
   public saveItem(item: Item): Observable<TodoResponseSuccess> {
-	  return this.http.post<TodoResponseSuccess>('todo', item);
+    return this.http.post<TodoResponseSuccess>('todo', item);
   }
 
   public updateItemStatus(id: string, status: boolean): Observable<TodoResponseSuccess> {
