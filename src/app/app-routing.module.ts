@@ -6,11 +6,6 @@ import { ItemComponent } from './item/item.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/all-items',
-    pathMatch: 'full',
-  },
-  {
-    path: 'all-items',
     component: TodolistComponent,
   },
   {
